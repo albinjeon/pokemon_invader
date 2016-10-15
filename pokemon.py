@@ -4,12 +4,6 @@ from pygame.locals import *
 import ctypes  # An included library with Python install.
 import random
 
-BLUE   = (51 ,153,255)
-GRAY   = (192,192,192)
-ORANGE = (255,128,  0)
-BLACK  = (	0, 	0,	0)
-WHITE  = (255,255,255)
-GREEN  = (0,  255,  0)
 red = (255,  0,  0)
 
 width = 640
@@ -49,7 +43,6 @@ gamestate = 1
 lazersize = 20 #내 레이저 이미지 크기
 lasthp = 25
 
-pkgo=pygame.image.load("pkgo.jpg")
 jiwoo=pygame.image.load("jw.png")
 jiwoo2=pygame.image.load("jw2.png")
 fika=pygame.image.load("fika.png")
@@ -71,7 +64,7 @@ clear=pygame.image.load("clear.jpg")
 
 pygame.init()
 screen = pygame.display.set_mode((width, height))
-pygame.display.set_caption('INVADER')
+pygame.display.set_caption('pokemon_INVADER')
 
 pygame.mixer.init()
 pygame.mixer.music.load("bgm.mp3")
