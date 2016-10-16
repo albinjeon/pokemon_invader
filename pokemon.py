@@ -3,6 +3,7 @@ import pygame, sys
 from pygame.locals import *
 import ctypes  # An included library with Python install.
 import random
+import os
 
 red = (255,  0,  0)
 
@@ -43,31 +44,34 @@ gamestate = 1
 lazersize = 20 #내 레이저 이미지 크기
 lasthp = 25
 
-jiwoo=pygame.image.load("jw.png")
-jiwoo2=pygame.image.load("jw2.png")
-fika=pygame.image.load("fika.png")
-vapo=pygame.image.load("vapo.png")
-arc=pygame.image.load("arceus.png")
-pkb=pygame.image.load("pokeball.png")
-elec=pygame.image.load("elec.png")
-elec2=pygame.image.load("elec2.png")
-elec3=pygame.image.load("elec3.png")
-heart=pygame.image.load("heart.png")
-gameover=pygame.image.load("gameover.jpg")
-bg1=pygame.image.load("bg1.jpg")
-bg2=pygame.image.load("bg2.jpg")
-bg3=pygame.image.load("bg3.png")
-lv1=pygame.image.load("lv1.png")
-lv2=pygame.image.load("lv2.png")
-lv3=pygame.image.load("lv3.png")
-clear=pygame.image.load("clear.jpg")
+imgfolder = 'image' + os.path.sep
+sndfolder = 'music' + os.path.sep
+
+jiwoo=pygame.image.load(imgfolder + "jw.png")
+jiwoo2=pygame.image.load(imgfolder + "jw2.png")
+fika=pygame.image.load(imgfolder + "fika.png")
+vapo=pygame.image.load(imgfolder + "vapo.png")
+arc=pygame.image.load(imgfolder + "arceus.png")
+pkb=pygame.image.load(imgfolder + "pokeball.png")
+elec=pygame.image.load(imgfolder + "elec.png")
+elec2=pygame.image.load(imgfolder + "elec2.png")
+elec3=pygame.image.load(imgfolder + "elec3.png")
+heart=pygame.image.load(imgfolder + "heart.png")
+gameover=pygame.image.load(imgfolder + "gameover.jpg")
+bg1=pygame.image.load(imgfolder + "bg1.jpg")
+bg2=pygame.image.load(imgfolder + "bg2.jpg")
+bg3=pygame.image.load(imgfolder + "bg3.png")
+lv1=pygame.image.load(imgfolder + "lv1.png")
+lv2=pygame.image.load(imgfolder + "lv2.png")
+lv3=pygame.image.load(imgfolder + "lv3.png")
+clear=pygame.image.load(imgfolder + "clear.jpg")
 
 pygame.init()
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('pokemon_INVADER')
 
 pygame.mixer.init()
-pygame.mixer.music.load("bgm.mp3")
+pygame.mixer.music.load(sndfolder + "bgm.mp3")
 pygame.mixer.music.play(-1,0.0)
 
 fontObj = pygame.font.SysFont('Courier',20)
@@ -409,7 +413,7 @@ while True:
 
 		if lasthp <= 0:
 			pygame.mixer.init()
-			pygame.mixer.music.load("endm.mp3")
+			pygame.mixer.music.load(sndfolder + "endm.mp3")
 			pygame.mixer.music.play(-1,0.0)
 			while True:
 				screen.blit(clear,(0,0))
@@ -420,7 +424,7 @@ while True:
 						sys.exit()
 
 pygame.mixer.init()
-pygame.mixer.music.load("end.mp3")
+pygame.mixer.music.load(sndfolder + "end.mp3")
 pygame.mixer.music.play(-1,0.0)
 screen.blit(gameover,(0,0))
 pygame.display.update()
